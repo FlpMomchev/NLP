@@ -1,0 +1,91 @@
+1.0 Introduction & Scope
+
+This document outlines the end-to-end process for introducing a new hardware product into the market, codenamed "Project Phoenix." The process begins with the initial validation of a product concept and concludes with the official market launch and handover to the sustaining engineering and sales teams. The primary goal is to establish a standardized, repeatable workflow that ensures cross-functional alignment, mitigates risks, and optimizes time-to-market. This process applies to all new hardware products developed internally and supersedes all previous NPI guidelines.
+
+2.0 Process Overview
+
+The New Product Introduction process is structured across several major phases: Concept Validation, Development & Engineering, Pre-Production, and Market Launch. Each phase has specific entry and exit criteria, key stakeholders, and deliverables. Progress from one phase to the next is gated by a formal review and sign-off from the Product Steering Committee (PSC).
+
+3.0 Phase 1: Concept Validation & Feasibility
+
+The process is initiated when the Product Strategy team submits a "New Product Proposal" (NPP). This document contains a high-level description of the product idea, target market analysis, competitive landscape, and a preliminary business case.
+
+Upon submission, the proposal is automatically routed to the head of Product Management. The head of Product Management conducts an initial screening. If the proposal is deemed misaligned with the company's strategic objectives or is fundamentally unviable, it is rejected, and the originator is notified with a justification.
+
+If the proposal passes the initial screening, a Concept Validation Lead (CVL) is assigned. The CVL assembles a cross-functional Feasibility Team, including representatives from R&D, Supply Chain, Finance, and Marketing.
+
+The Feasibility Team is tasked with a 30-day deep-dive analysis. The R&D representative assesses technical feasibility, identifying potential challenges, required technologies, and high-level resource estimates. Simultaneously, the Supply Chain representative investigates the availability of critical components, identifies potential sourcing risks, and provides a rough estimate of the bill of materials (BOM) cost. The Finance representative refines the business case, developing a preliminary Profit and Loss (P&L) projection. The Marketing representative conducts further market research, defines the target user personas, and outlines a unique value proposition.
+
+During this 30-day period, the team may require additional data. For instance, if a novel manufacturing technique is proposed, the R&D lead might need to engage a specialized external consultant. This requires a formal request for external consultation, which must be approved by the department head. If approved, the procurement process for the consultant is initiated. If rejected, the team must find an alternative solution or document the constraint.
+
+At the end of the 30 days, the Feasibility Team consolidates its findings into a "Feasibility Report." This report includes a detailed technical assessment, a preliminary BOM, a risk register, a refined P&L, and a go/no-go recommendation. The CVL presents this report to the Product Steering Committee.
+
+The PSC reviews the report. They have three options:
+
+Approve: The project is greenlit to move to the Development phase. A formal Project Charter is issued.
+
+Request Re-evaluation: The PSC may have specific concerns (e.g., BOM cost is too high, market analysis is incomplete). They will send the report back to the Feasibility Team with specific action items. The team has 15 days to address these points and resubmit the report. This loop can occur a maximum of two times. If the concerns cannot be resolved after two re-evaluations, the project is automatically rejected.
+
+Reject: The project is formally canceled. The decision and rationale are documented and communicated to all stakeholders.
+
+4.0 Phase 2: Development & Engineering
+
+Upon approval from the PSC, the project officially enters the Development & Engineering phase. The Project Charter is used to assign a dedicated Project Manager (PM), who takes over from the CVL. The PM assembles the core project team.
+
+This phase is governed by a series of parallel workstreams.
+
+Hardware Engineering: The R&D team begins detailed design work, creating schematics, PCB layouts, and mechanical designs. This is an iterative process. As designs are created (Design V1), they undergo an internal peer review. If issues are found, the design is revised (Design V1.1) and reviewed again. Once a design is internally approved, it is released for prototype fabrication. This triggers a request to the procurement team to order all necessary components for a small batch of "Engineering Validation Test" (EVT) units.
+
+Software/Firmware Engineering: Concurrently, the software team develops the necessary firmware and embedded software for the hardware. They work based on the "Product Requirements Document" (PRD) finalized at the end of Phase 1. Development follows an agile methodology, with two-week sprints. At the end of each sprint, the developed code is integrated and tested on development boards.
+
+Supply Chain & Procurement: The Supply Chain team uses the preliminary BOM to begin formal vendor selection and negotiation. For each critical component, at least two potential suppliers must be identified. They send out "Request for Quotation" (RFQ) packages. Once quotes are received, they are analyzed based on cost, lead time, and supplier reliability. Contracts are then negotiated and signed. This process must be completed before the pre-production phase.
+
+The first major milestone in this phase is the arrival of the EVT units. Once the physical prototypes are received from the fabricator, the hardware team performs initial bring-up and testing. They check for basic functionality and electrical integrity. If a fundamental flaw is discovered (e.g., a critical design error in the PCB), a "Stop Ship" order is issued. This immediately halts all parallel activities. The hardware team must perform a root cause analysis, redesign the board, and re-order a new set of EVT units. This represents a significant delay and requires a formal report to the PSC.
+
+Assuming the EVT units pass initial bring-up, they are then distributed to the software and Quality Assurance (QA) teams. The software team ports their developed firmware onto the actual hardware. The QA team begins executing their "Test Plan," which was developed in parallel with the hardware design.
+
+The QA team files bugs and issues into a central tracking system. Each bug is assigned a priority (P0 to P4). Engineering teams are responsible for fixing these bugs. A P0 or P1 bug (a critical issue that prevents core functionality) must be addressed before the project can proceed.
+
+This cycle of building, testing, and fixing continues through several iterations (EVT1, EVT2, etc.). Each build incorporates hardware revisions and software updates. After each cycle, a full report is presented to the PM.
+
+The phase concludes when a build is deemed stable enough to meet the "Design Validation Test" (DVT) criteria. These criteria are defined in the PRD and include measures for performance, stability, and core feature completeness. The PM, in consultation with the engineering and QA leads, makes the formal declaration that DVT criteria have been met. This triggers the gate review for the next phase.
+
+5.0 Phase 3: Pre-Production & Validation
+
+The DVT-ready build is presented to the PSC. The review focuses on product maturity, bug metrics, and the status of the supply chain. If approved, the project moves to the Pre-Production phase.
+
+The primary goal of this phase is to validate the manufacturing process and produce a larger batch of units for final testing and certification.
+
+The PM authorizes the Supply Chain team to place an order for a "Production Validation Test" (PVT) build. This is typically a run of several hundred units, built on the actual production line at the chosen contract manufacturer's facility.
+
+Engineers from the home office are dispatched to the factory to oversee the PVT build. They work with the factory's engineers to set up the assembly line, fine-tune processes, and resolve any issues that arise during production. If the yield (the percentage of good units produced) is below a target threshold (e.g., 95%), the line is halted. An investigation is launched to determine the cause, which could be anything from a faulty component to an incorrect assembly procedure. The process is adjusted, and the build is resumed.
+
+While the PVT build is underway, other teams work in parallel.
+
+Regulatory & Compliance: The dedicated compliance team takes several of the DVT units and submits them to certified external labs for regulatory testing (e.g., FCC, CE, UL). This is a critical path item. A failure at the compliance lab can force significant design changes. If a failure occurs, the lab provides a detailed report. The hardware team must analyze the failure, implement a fix (which may require a new PCB spin), and resubmit a revised unit for testing. This can be a lengthy and costly process.
+
+Marketing & Sales: The marketing team uses PVT units to create final marketing materials, including product photography, videos, and web content. The sales team uses them for early demonstrations to key retail partners and for internal sales training.
+
+Once the PVT units are produced and the factory reports a stable yield, the units are sent back to the home office for extensive testing. A portion is given to the QA team for a full regression test. Another portion is used for an internal "dogfooding" program, where employees use the product in their daily lives to uncover real-world issues. A third portion is sent to a small group of trusted external beta testers.
+
+Feedback from all these sources is collected and analyzed. Any critical (P0/P1) bugs discovered at this stage must be fixed. Fixes are typically implemented in software. If a hardware fix is required at this late stage, it triggers a crisis meeting with the PSC to evaluate the cost and schedule impact. The decision might be made to launch with a known hardware issue (if a software workaround exists) and fix it in a subsequent revision, or to delay the launch entirely.
+
+This phase concludes when all major regulatory certifications have been received, the production yield is stable, and there are no open P0/P1 bugs. The PM compiles a "Launch Readiness Report" and presents it to the PSC for the final go/no-go decision.
+
+6.0 Phase 4: Market Launch & Handover
+
+Upon receiving the final "go" for launch from the PSC, the PM initiates the final phase.
+
+The PM gives the green light to the Supply Chain team to authorize the contract manufacturer to begin the first mass production run.
+
+Simultaneously, the Marketing team executes the launch plan. This involves a coordinated effort: the PR team issues the official press release, the web team makes the product page live on the company website, and the social media team begins their campaign.
+
+The Sales team activates their channels. For direct-to-consumer sales, the product is made available for purchase on the website. For retail channels, purchase orders are accepted, and logistics are coordinated to ship inventory to partner warehouses.
+
+In the first few weeks following the launch, a "hyper-care" period is in effect. A cross-functional team, including representatives from Engineering, Support, and Supply Chain, monitors the situation closely. Customer support channels are monitored for any early reports of systemic issues. Sales data is tracked to gauge initial market reception.
+
+If a significant unforeseen issue arises (e.g., a widespread product failure), an emergency response protocol is activated. This involves halting shipments, communicating with customers, and launching an immediate root cause analysis.
+
+After a 30-day hyper-care period, if no major issues have emerged, the project is officially transitioned from the NPI team to the sustaining teams. The Engineering team hands over all design documentation and knowledge to the Sustaining Engineering team, who will be responsible for future incremental updates and bug fixes. The PM formally hands over responsibility for sales forecasting and inventory management to the standard Operations team.
+
+The project is then formally closed. The PM conducts a post-mortem analysis with the core team to document lessons learned, which are then fed back into the NPI process documentation to improve future projects. This concludes the New Product Introduction process.

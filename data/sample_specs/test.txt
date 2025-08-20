@@ -1,0 +1,16 @@
+Header: Internal Use Only
+Page 1 of 5
+Confidentiality Notice: Do not distribute.
+
+Table of Contents
+1. Introduction
+2. Process Description
+
+- When the Customer places an order, the System checks inventory.
+* If the item is in stock, the System processes payment.
+• If out of stock, the System notifies the Customer.
+
+Author: John Doe
+Created: 2024-01-01
+Footer: End of Document
+Copyright © 2024

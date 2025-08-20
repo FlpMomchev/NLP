@@ -1,0 +1,4 @@
+Let’s say we want to model a process with concurring instances. We are using a simple example. If one credit check of a customer is running, we do not want another credit check for the same customer to be performed at the same time.
+The reason could be that the total number of credit checks performed influences the result of the check.
+Let’s assume that we are running a credit check for a customer and we get a second request for the same customer at the same time.
+What all solutions have in common is that every new instance needs to check for concurring instances on the data level before starting the actual credit check.

@@ -1,0 +1,26 @@
+# Core NLP & SRL
+numpy<2
+torch>=2.1.0,<2.2.0
+spacy>=3.5.0,<3.6.0
+transformers>=4.40.0
+coreferee>=1.1.0
+
+# Token-counting
+tiktoken>=0.6.0
+
+# Basic NLP helpers
+nltk>=3.5
+
+# Document I/O
+python-docx>=0.8.10
+pypdf>=3.0.0
+
+# Templating & XML parsing
+jinja2>=3.0
+lxml>=4.6.0
+
+# Graph analysis (optional)
+networkx>=2.5
+
+# Testing
+pytest>=6.0
